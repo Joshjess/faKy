@@ -10,9 +10,10 @@ FaKy can be installed through pip install faKy; the NLTK and spaCy's web_core_we
 The use case of faKy is the computation of features based on text objects; the faKy library can be used to compute the features for all the text objects in the data frame. See the example code block.
 
 Import the faky library and the corresponding function:
-    -from faKy.faKy import process_text_readability
+    from faKy.faKy import process_text_readability
+
 Apply process_text_readability to the data frame
-    -dummy_df['readability'] = dummy_df['text-object'].apply(process_text_readability)
+    dummy_df['readability'] = dummy_df['text-object'].apply(process_text_readability)
 
 # faKy functionality
 | Function Name             | Usage                                                                                                                                                            |
