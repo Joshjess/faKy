@@ -12,11 +12,13 @@ The use case of faKy is the computation of features based on text objects; the f
 
 Import the faky library and the corresponding function:
 ```python
-    from faKy.faKy import process_text_readability ```
+from faKy.faKy import process_text_readability 
+```
 
 Apply process_text_readability to the data frame
 ```python
-    dummy_df['readability'] = dummy_df['text-object'].apply(process_text_readability) ```
+dummy_df['readability'] = dummy_df['text-object'].apply(process_text_readability) 
+```
 
 # faKy functionality
 | Function Name             | Usage                                                                                                                                                            |
