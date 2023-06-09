@@ -11,7 +11,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 '''
 This exception handling block verifies that the spaCy language model is installed.
 If it is not installed, it downloads the model.
-https://stackoverflow.com/questions/53383352/spacy-and-spacy-models-in-setup-py
+source: https://stackoverflow.com/questions/53383352/spacy-and-spacy-models-in-setup-py
 '''
 try:
     nlp = spacy.load('en_core_web_md')
