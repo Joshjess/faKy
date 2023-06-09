@@ -1,23 +1,34 @@
+import spacy
 import pandas as pd 
 import numpy as np
 import sys
 import gzip
-import spacy
 from spacy.tokens import Doc
 from spacy_readability import Readability
 import nltk
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-
+'''
+This exception handling block verifies that the spaCy language model is installed.
+If it is not installed, it downloads the model.
+'''
+try:
+    nlp = spacy.load('en_core_web_md')
+except OSError:
+    print('Downloading language model for the spaCy POS tagger\n'
+        "(don't worry, this will only happen once)")
+    from spacy.cli import download
+    download('en_core_web_md')
+    nlp = spacy.load('en_core_web_md')
 
 nltk.download('vader_lexicon')
-nlp = spacy.load('en_core_web_md')
 
 
 '''
- The function readability_computation computes the Flesch-Kincaid Reading Ease score for a spaCy document using the Readability class. 
- It returns the original document object. 
- It is added to the spaCy pipeline using nlp.add_pipe with last=True.
+Under the hood functin needed for process_readability.
+The function readability_computation computes the Flesch-Kincaid Reading Ease score for a spaCy document using the Readability class. 
+It returns the original document object. 
+It is added to the spaCy pipeline using nlp.add_pipe with last=True.
 '''
 def readability_computation(doc):
     read = Readability()
@@ -36,6 +47,7 @@ def process_text_readability(text):
     return flesch_kincaid_reading_ease
 
 '''
+Under the hood function needed for process_text_complexity.
 The first line creates a custom extension attribute called "compressed_size" for spaCy's Doc object. 
 The function compress_doc compresses the serialized form of a spaCy Doc object using gzip, calculates the compressed size,
 and sets the compressed size to the custom "compressed_size" attribute of the Doc object before returning the Doc object.
@@ -162,10 +174,6 @@ def values_by_label(df, feature, labels, df_label):
         values_label.append(df.loc[df[df_label] == label, feature])
     return values_label
 
-'''
-This function takes a list of numerical values as input and returns its mode, mean, standard deviation, and median as a tuple. 
-The mode is calculated using the statistics module, while the mean, standard deviation, and median are calculated using numpy.
-'''
 
 '''
 The dunn_table function takes a DataFrame of Dunn's test results and creates a new DataFrame where each row represents a group and each column represents a pairwise comparison with another group. 
@@ -183,3 +191,4 @@ def dunn_table(dunn_results):
             reject_h0_table.loc[i, (j, 'reject')] = reject_h0
     reject_h0_table.columns.names = ['group', 'metric']
     return reject_h0_table
+

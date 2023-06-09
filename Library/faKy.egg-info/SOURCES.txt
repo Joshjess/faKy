@@ -12,3 +12,5 @@ faKy/en_core_web_md-2.3.1/PKG-INFO
 faKy/en_core_web_md-2.3.1/meta.json
 faKy/en_core_web_md-2.3.1/setup.cfg
 faKy/en_core_web_md-2.3.1/setup.py
+faKy/en_core_web_md-2.3.1/en_core_web_md/__init__.py
+faKy/en_core_web_md-2.3.1/en_core_web_md/meta.json

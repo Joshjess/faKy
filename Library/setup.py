@@ -5,8 +5,8 @@ with open('readme.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='faKy',
-    version='1.3.1',
-    description='Your library description',
+    version='2.1.0',
+    description='faKy is a Python library for text analysis. It provides functions for readability, complexity, sentiment, and statistical analysis in the scope of fake news detection.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='Sandro Barres Hamers',
@@ -14,7 +14,6 @@ setup(
     packages=['faKy'],
     install_requires=[
         'numpy==1.24.2',
-        'spacy==2.3.9',
         'pandas==1.3.4',
         'spacy-readability==1.4.1',
         'nltk==3.7',
@@ -24,6 +23,6 @@ setup(
         'vader': ['vaderSentiment'],
     },
     package_data={
-        'faKy': ['en_core_web_md-2.3.1/*'],
-    },
+    'faKy': ['en_core_web_md-2.3.1/*', 'en_core_web_md-2.3.1/en_core_web_md/*'],
+}
 )
