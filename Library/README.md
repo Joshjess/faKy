@@ -51,7 +51,7 @@ for tag in ner_labels:
 
 After applying these functions to your data frame, the features will be extracted and added as a new column, as shown in the example below:
 
-![Alt Text](./faKy_df.png)
+![Alt Text](./faKy_101.png)
 
 # faKy functionality
 Here is a summary of the available functions in faKy:
