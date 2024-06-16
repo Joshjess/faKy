@@ -1,6 +1,6 @@
 from setuptools import setup
 
-with open('readme.md', 'r', encoding='utf-8') as f:
+with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
@@ -13,16 +13,16 @@ setup(
     author_email='sbarreshamers@gmail.com',
     packages=['faKy'],
     install_requires=[
-        'numpy==1.24.2',
-        'pandas==1.3.4',
+        'numpy==1.26.0',
+        'pandas==2.2.2',
         'spacy-readability==1.4.1',
-        'nltk==3.7',
+        'nltk==3.8.1',
         'vaderSentiment==3.3.2',
     ],
     extras_require={
         'vader': ['vaderSentiment'],
     },
     package_data={
-    'faKy': ['en_core_web_md-2.3.1/*', 'en_core_web_md-2.3.1/en_core_web_md/*'],
+    'faKy': ['en_core_web_md-3.7.1/*', 'en_core_web_md-3.7.1/en_core_web_md/*'],
 }
 )
