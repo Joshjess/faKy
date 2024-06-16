@@ -14,7 +14,7 @@ setup(
     packages=['faKy'],
     install_requires=[
         'numpy==1.26.0',
-        'pandas==2.2.0',
+        'pandas==2.0.3',
         'spacy-readability==1.4.1',
         'nltk==3.8.1',
         'vaderSentiment==3.3.2',
