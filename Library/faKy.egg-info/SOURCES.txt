@@ -1,6 +1,5 @@
 README.md
 setup.py
-faKy/__init__.py
 faKy/faKy.py
 faKy.egg-info/PKG-INFO
 faKy.egg-info/SOURCES.txt
